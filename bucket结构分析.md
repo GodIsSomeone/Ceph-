@@ -8,7 +8,7 @@
 
 结构图如下：
 
-![avatar](./pic/bucket/bucket结构图.jpg)
+![avatar](./pic/bucket/bucket结构图.png)
 
 #### RGWUserBuckets
 
