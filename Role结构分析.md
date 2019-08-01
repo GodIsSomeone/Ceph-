@@ -2,7 +2,7 @@
 
 A role is similar to a user and has permission policies attached to it, that determine what a role can or can not do. A role can be assumed by any identity that needs it. If a user assumes a role, a set of dynamically created temporary credentials are returned to the user. A role can be used to delegate access to users, applications, services that do not have permissions to access some s3 resources.  
 
-角色是User的附属品，决定了User什么能做，什么不能做。角色可以被假想为任何需要的认证，如果一个user承担了某个角色，就拥有了动态创建的临时证。角色可以将访问S3资源的权限赋给之前没有权限的用户、应用、服务等。（翻译的屎一样的……）  
+角色和用户类似，并且有许可权限，这些权限决定了角色什么能做，什么不能做。角色可以被假想为任何需要的认证，如果用户担任角色,则一组动态创建的临时凭据将返回给用户。角色可用于将访问权限委派给没有权限访问某些 s3 资源的用户、应用程序和服务。  
 [Role简介](http://docs.ceph.com/docs/master/radosgw/role/)
 
 ### Role的数据结构
