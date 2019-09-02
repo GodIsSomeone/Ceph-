@@ -1,4 +1,21 @@
-### policy分析
+## policy分析
+
+### bucket policy 
+  
+  [bucketpolicy](https://docs.ceph.com/docs/master/radosgw/bucketpolicy/)
+
+  We use the RGW ‘tenant’ identifier in place of the Amazon twelve-digit account ID. In the future we may allow you to assign an account ID to a tenant, but for now if you want to use policies between AWS S3 and RGW S3 you will have to use the Amazon account ID as the tenant ID when creating users.  
+
+  每一个tenant独享一个空间的桶。结构类似于：tenant:bucket。  
+  Under AWS, all tenants share a single namespace. RGW gives every tenant its own namespace of buckets. There may be an option to enable an AWS-like ‘flat’ bucket namespace in future versions. At present, to access a bucket belonging to another tenant, address it as “tenant:bucket” in the S3 request.  
+
+  桶之间的policy可以在账户之间转移，但是不支持用户、角色、组许可，account可以直接赋值权限给独立的用户。account的桶权限，相当于account下的所有user的桶权限。
+  In AWS, a bucket policy can grant access to another account, and that account owner can then grant access to individual users with user permissions. Since we do not yet support user, role, and group permissions, account owners will currently need to grant access directly to individual users, and granting an entire account access to a bucket grants access to all users in that account.  
+
+  桶policy不支持string插值（即相互之间的推导）。  
+  Bucket policies do not yet support string interpolation.  
+
+  We support certain s3 condition keys for bucket and object requests.  
 
 #### RGWAccessControlPolicy
 
